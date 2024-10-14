@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Voice Assistant Project</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html" style="color: white;">Home</a></li>
+        <li style="color: white;">Computer Science
+            <ul>
+                <li><a href="text-based.html" style="color: white;">Text-Based Roguelike RPG Project</a></li>
+                <li><a href="voice-assistant.html" style="color: white;">Voice Assistant</a></li>
+            </ul>
+        </li>
+        <li style="color: white;">Graphic
+            <ul>
+                <li><a href="advance-higher.html" style="color: white;">Advance Higher Project</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Voice Assistant</h2>
+    <p>A Python-based voice assistant capable of performing tasks like playing music, setting reminders, and answering questions.</p>
+    <p><strong>Technologies:</strong> Python, SpeechRecognition API</p>
+	
+	<div style="width: 100%; height: 600px;">
+    <iframe src="The report of the AI assistant project.pdf" width="100%" height="100%"></iframe>
+	</div>
+	
+	<div style="margin-top: 20px; text-align: center;">
+            <a href="C:\Users\user\Desktop\Project website\The report of the AI assistant project.pdf" class="button" download>Download Word/PDF Document</a>
+            <a href="C:\Users\user\Desktop\Project website\README.zip" class="button" download>Download Python File Folder</a>
+    </div>
+
+
+	<h2>Python Demonstration</h2>
+    <p>Below is a demonstration of a Python snippet from the Voice Assistant project.</p>
+
+    <div class="code-container">
+        <pre>
+            <code>
+# Example Python code from Voice Assistant
+import speech_recognition as sr
+
+def recognize_speech():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = recognizer.listen(source)
+        try:
+            print("Recognizing...")
+            text = recognizer.recognize_google(audio)
+            print(f"You said: {text}")
+        except sr.UnknownValueError:
+            print("Sorry, I did not understand.")
+        except sr.RequestError:
+            print("Sorry, could not request results from the speech recognition service.")
+            
+recognize_speech()
+            </code>
+        </pre>
+    </div>
+	
+	
+</section>
+
+</body>
+</html>
