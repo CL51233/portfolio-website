@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("WLOWcg6bq0ovXzm8L"); // Replace YOUR_USER_ID with your actual user ID
+        })();
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Project Portfolio</h1>
+    <p>Explore my work in Computer Science and Graphic Design.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html" style="color: white;">Home</a></li>
+        <li style="color: white;">Computer Science
+            <ul>
+                <li><a href="text-based.html" style="color: white;">Text-Based Roguelike RPG Project</a></li>
+                <li><a href="voice-assistant.html" style="color: white;">Voice Assistant</a></li>
+            </ul>
+        </li>
+        <li style="color: white;">Graphic
+            <ul>
+                <li><a href="advance-higher.html" style="color: white;">Advance Higher Project</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Welcome to my portfolio!</h2>
+    <p>Browse through my latest work in Computer Science and Graphic Design.</p>
+
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Text-Based Roguelike RPG</h3>
+        <p>A brief description of the Text-Based Roguelike RPG project.</p>
+        <a href="text-based.html" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+        <h3>Voice Assistant Project</h3>
+        <p>A brief description of the voice assistant project.</p>
+        <a href="voice-assistant.html" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+        <h3>Advance Higher Project</h3>
+        <p>A brief description of the advance higher project.</p>
+        <a href="advance-higher.html" class="button">View Project</a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        emailjs.sendForm('service_uqcseji', 'template_gvexdej', this)
+            .then(function() {
+                alert('Your message has been sent successfully!');
+            }, function(error) {
+                alert('Failed to send message: ' + JSON.stringify(error));
+            });
+    });
+</script>
+
+</body>
+</html>
