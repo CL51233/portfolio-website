@@ -6,11 +6,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    background-size: cover;
+    background-image: url('your-background-image-url.jpg'); /* Add a background image URL here if desired */
+    background-size: cover; /* Ensure it covers the entire area */
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.8);
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -18,7 +19,7 @@ header {
 }
 
 nav {
-    background-color: rgba(68, 68, 68, 0.9);
+    background-color: rgba(68, 68, 68, 0.9); /* Slightly transparent nav */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -33,6 +34,7 @@ nav ul {
 
 nav ul li {
     position: relative;
+    padding: 0;
     flex: 1;
     text-align: center;
 }
@@ -46,11 +48,15 @@ nav ul li a {
     padding: 15px 0;
     text-decoration: none;
     display: block;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 nav ul li a:hover {
-    color: #ff9800;
+    color: #ff9800; /* Change color on hover */
+}
+
+nav ul li:hover > ul {
+    display: block;
 }
 
 nav ul ul {
@@ -60,33 +66,28 @@ nav ul ul {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow to dropdown */
 }
 
 nav ul ul li a {
     padding: 10px 15px;
     color: white;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease; /* Smooth transition */
 }
 
 nav ul ul li a:hover {
-    background: #444;
+    background: #444; /* Change background on hover */
 }
 
-/* Container for side-by-side project sections */
-.projects-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+section {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
 }
 
-/* Individual project section styling */
-.project-section {
-    flex: 1;
-    min-width: 300px;
+h2 {
+    color: #333;
+    text-align: center; /* Center align project titles */
 }
 
 /* Card style for projects */
@@ -94,25 +95,29 @@ nav ul ul li a:hover {
     background: white;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s; /* Smooth transition on hover */
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
-h2 {
-    color: #333;
-    text-align: center;
+/* Button style */
+.button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease; /* Smooth transition */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-    }
+.button:hover {
+    background-color: #0056b3; /* Darker button on hover */
 }
 
 /* Python Demonstration Section */
@@ -123,6 +128,12 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: auto;
+    text-align: left;
+}
+
+#python-demo h2 {
+    text-align: center;
+    color: #333;
 }
 
 .code-container {
@@ -134,7 +145,7 @@ h2 {
 }
 
 pre {
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* To wrap long lines */
     word-wrap: break-word;
 }
 
@@ -143,100 +154,58 @@ code {
     font-size: 14px;
 }
 
-/* Contact Section */
 #contact {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: auto;
+    max-width: 600px; /* Set a max-width for the form */
+    margin: auto; /* Center the section */
+    text-align: center; /* Center text in the section */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+#contact:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 #contact form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+#contact form label {
+    margin-top: 10px; /* Add some space above labels */
 }
 
 #contact form input,
 #contact form textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* Make inputs full width */
+    max-width: 400px; /* Set a max-width for inputs */
+    padding: 10px; /* Add some padding for better appearance */
+    margin: 5px 0; /* Add space between inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 #contact form input:focus,
 #contact form textarea:focus {
-    border-color: #007bff;
+    border-color: #007bff; /* Change border color on focus */
 }
 
 #contact form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px; /* Add padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color for button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background 0.3s ease; /* Smooth transition */
 }
 
 #contact form button:hover {
-    background-color: #0056b3;
-}
-
-/* About Me Section */
-#about {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: auto;
-    text-align: left;
-}
-
-#about h2 {
-    text-align: center;
-    color: #333;
-}
-
-/* Contact Section */
-#contact {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contact form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#contact form button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker button on hover */
 }
