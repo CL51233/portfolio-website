@@ -76,12 +76,14 @@ nav ul ul li a:hover {
 /* Container for side-by-side project sections */
 .projects-container {
     display: flex;
-    gap: 20px;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
+/* Individual project section styling */
 .project-section {
     flex: 1;
     min-width: 300px;
@@ -92,7 +94,7 @@ nav ul ul li a:hover {
     background: white;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 0;
+    margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
@@ -104,22 +106,6 @@ nav ul ul li a:hover {
 h2 {
     color: #333;
     text-align: center;
-}
-
-/* Button style */
-.button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s ease;
-}
-
-.button:hover {
-    background-color: #0056b3;
 }
 
 /* Responsive design for smaller screens */
