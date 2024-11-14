@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("WLOWcg6bq0ovXzm8L"); // Replace with your actual EmailJS User ID
+        })();
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>About Me</h1>
+</header>
+
+<section id="about">
+    <h2>Welcome to My Journey!</h2>
+    <p>Hello, I'm a passionate programmer with over 12 years of experience in coding, game development, and graphic design. My journey began with block coding through Scratch and Mbot competitions, where I showcased projects at international Maker Faires. These experiences broadened my view of technology and ignited my passion for solving problems creatively.</p>
+
+    <p>In high school, I expanded my skills in Python, JavaScript, and Unreal Engine. My key projects include a <strong>Voice Assistant</strong> and a <strong>Text-Based RPG Game</strong>, both of which are highlighted on this website. These projects have helped me develop strong problem-solving skills, with a focus on user experience and software development.</p>
+
+    <p>Currently, I am studying Software Development at Edinburgh College, where I am enhancing my expertise in databases and web development using Django. I am also about to begin a work placement with CGI, where I look forward to applying my skills in a real-world setting and learning from industry professionals.</p>
+
+    <p>I also enjoy playing the piano (Grade 2) and have taken on a leadership role as the captain of my school’s badminton team. As I continue my journey in technology, I am eager to focus on game development and software engineering, building creative and impactful projects.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        emailjs.sendForm('service_uqcseji', 'template_gvexdej', this)
+            .then(function() {
+                alert('Your message has been sent successfully!');
+            }, function(error) {
+                alert('Failed to send message: ' + JSON.stringify(error));
+            });
+    });
+</script>
+
+</body>
+</html>
