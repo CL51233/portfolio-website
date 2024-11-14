@@ -8,7 +8,7 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("WLOWcg6bq0ovXzm8L");
+            emailjs.init("WLOWcg6bq0ovXzm8L"); // Replace YOUR_USER_ID with your actual user ID
         })();
     </script>
 </head>
@@ -33,7 +33,6 @@
                 <li><a href="advance-higher.html" style="color: white;">Advance Higher Project</a></li>
             </ul>
         </li>
-        <li><a href="about-me.html" style="color: white;">About Me</a></li>
     </ul>
 </nav>
 
@@ -41,34 +40,26 @@
     <h2>Welcome to my portfolio!</h2>
     <p>Browse through my latest work in Computer Science and Graphic Design.</p>
 
-    <!-- Flex Container for Side-by-Side Layout -->
-    <section class="projects-container">
-    <!-- Computer Science Section -->
-    <div class="project-section">
-        <h2>Computer Science Projects</h2>
-        <div class="project-card">
-            <h3>Text-Based Roguelike RPG</h3>
-            <p>A brief description of the Text-Based Roguelike RPG project.</p>
-            <a href="text-based.html" class="button">View Project</a>
-        </div>
-        <div class="project-card">
-            <h3>Voice Assistant Project</h3>
-            <p>A brief description of the Voice Assistant project.</p>
-            <a href="voice-assistant.html" class="button">View Project</a>
-        </div>
+    <!-- Computer Science Projects Section -->
+    <h2>Computer Science Projects</h2>
+    <div class="project-card">
+        <h3>Text-Based Roguelike RPG</h3>
+        <p>A brief description of the Text-Based Roguelike RPG project.</p>
+        <a href="text-based.html" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+        <h3>Voice Assistant Project</h3>
+        <p>A brief description of the voice assistant project.</p>
+        <a href="voice-assistant.html" class="button">View Project</a>
     </div>
 
-    <!-- Graphic Section -->
-    <div class="project-section">
-        <h2>Graphic Projects</h2>
-        <div class="project-card">
-            <h3>Advance Higher Project</h3>
-            <p>A brief description of the Advance Higher project.</p>
-            <a href="advance-higher.html" class="button">View Project</a>
-        </div>
+    <!-- Graphic Projects Section -->
+    <h2>Graphic Projects</h2>
+    <div class="project-card">
+        <h3>Advance Higher Project</h3>
+        <p>A brief description of the Advance Higher project.</p>
+        <a href="advance-higher.html" class="button">View Project</a>
     </div>
-    </section>
-
 </section>
 
 <section id="contact">
@@ -89,7 +80,7 @@
 
 <script>
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the default form submission
 
         emailjs.sendForm('service_uqcseji', 'template_gvexdej', this)
             .then(function() {
