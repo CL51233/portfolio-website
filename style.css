@@ -186,3 +186,57 @@ code {
 #contact form button:hover {
     background-color: #0056b3;
 }
+
+/* About Me Section */
+#about {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+#about h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Contact Section */
+#contact {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background-color: #0056b3;
+}
