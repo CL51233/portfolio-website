@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+	
 <header>
     <h1>Advance Higher Graphic Project</h1>
 </header>
@@ -47,6 +50,54 @@
 	
 	
 </section>
+	<script>
+	  // Initialize scene, camera, and renderer
+	  const scene = new THREE.Scene();
+	  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+	  const renderer = new THREE.WebGLRenderer();
+	  renderer.setSize(window.innerWidth, window.innerHeight);
+	  document.body.appendChild(renderer.domElement);
+	
+	  // Add a light source
+	  const light = new THREE.PointLight(0xffffff, 1, 100);
+	  light.position.set(10, 10, 10);
+	  scene.add(light);
+	
+	  // Add a simple ambient light
+	  const ambientLight = new THREE.AmbientLight(0x404040); // Ambient light
+	  scene.add(ambientLight);
+	
+	  // Load your 3D model
+	  const loader = new THREE.GLTFLoader();
+	  loader.load('Library (1).glb', function (gltf) {
+	    // Add the loaded model to the scene
+	    scene.add(gltf.scene);
+	  }, undefined, function (error) {
+	    console.error(error);
+	  });
+	
+	  // Set camera position
+	  camera.position.z = 5;
+	
+	  // Animation loop
+	  function animate() {
+	    requestAnimationFrame(animate);
+	    renderer.render(scene, camera);
+	  }
+	
+	  animate();
+	
+	  // Handle resizing
+	  window.addEventListener('resize', function () {
+	    renderer.setSize(window.innerWidth, window.innerHeight);
+	    camera.aspect = window.innerWidth / window.innerHeight;
+	    camera.updateProjectionMatrix();
+	  });
+	</script>
+<section>
+	
+</section>
+
 
 </body>
 </html>
