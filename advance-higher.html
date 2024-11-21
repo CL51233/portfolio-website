@@ -26,41 +26,17 @@
         }
 
         .text-box, .model-viewer {
-            flex: 2; /* 2/3 of the width */
+            flex: 1; /* Half width each */
             background-color: #f4f4f4;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            height: 400px; /* Ensure consistent height */
+            height: 400px; /* Consistent height */
             overflow: auto;
-        }
-
-        .button-container {
-            flex: 1; /* 1/3 of the width */
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #0D5C75;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            width: 100%; /* Consistent size */
-        }
-
-        .button:hover {
-            background-color: #094b60;
         }
 
         /* PDF viewer styling */
         .pdf-viewer {
-            display: none; /* Initially hidden */
             margin-top: 20px;
             width: 100%;
             height: 600px;
@@ -103,30 +79,14 @@
                 src="https://sketchfab.com/models/366f971ce5964df8a8a02c3d0d270ab3/embed">
             </iframe>
         </div>
-
-        <!-- Button Section -->
-        <div class="button-container">
-            <button class="button" onclick="showPDF()">Documentation of the Project</button>
-        </div>
     </div>
 
     <!-- PDF Viewer Section -->
-    <div class="pdf-viewer" id="pdfViewer">
+    <div class="pdf-viewer">
         <iframe src="assemble ship.pdf" width="100%" height="100%"></iframe>
     </div>
 </section>
 
-<script>
-    function showPDF() {
-        const pdfViewer = document.getElementById("pdfViewer");
-        // Toggle the visibility of the PDF viewer
-        if (pdfViewer.style.display === "none" || pdfViewer.style.display === "") {
-            pdfViewer.style.display = "block";
-        } else {
-            pdfViewer.style.display = "none";
-        }
-    }
-</script>
-
 </body>
 </html>
+
