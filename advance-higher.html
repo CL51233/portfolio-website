@@ -6,9 +6,59 @@
     <title>Advance Higher Project</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Hide content by default */
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        /* Layout styling */
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .text-box {
+            flex: 2; /* 2/3 of the width */
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            flex: 1; /* 1/3 of the width */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #0D5C75;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #094b60;
+        }
+
+        /* Hidden sections */
         #pdfViewer, #modelViewer {
             display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -18,36 +68,28 @@
     <h1>Advance Higher Graphic Project</h1>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html" style="color: white;">Home</a></li>
-        <li><a href="about.html" style="color: white;">About Me</a></li>
-        <li style="color: white;">Computer Science
-            <ul>
-                <li><a href="text-based.html" style="color: white;">Text-Based Roguelike RPG Project</a></li>
-                <li><a href="voice-assistant.html" style="color: white;">Voice Assistant</a></li>
-            </ul>
-        </li>
-        <li style="color: white;">Graphic
-            <ul>
-                <li><a href="advance-higher.html" style="color: white;">Advance Higher Project</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-
 <section>
     <h2>SQA Advance Higher Graphic Communication Project</h2>
     <h3 style="text-align: center;">Project Status : In Progress</h3>
-    <p>The project consists of two distinct sections: CVMG (Creative Visual Media Graphics) and Technical Graphics (TG).</p>
-    <p>CVMG focuses on digital graphic design elements, including user interfaces, posters, and other forms of visual communication. This section of the project will feature advertisements for the game, as well as the game's user interface, all aligned with a cohesive visual identity inspired by low-poly style games.</p>
-    <p>TG (Technical Graphics) emphasizes the creation of 3D models and technical sketches. The centerpiece of this section is a 3D scene representing the game's main menu, designed with low-poly aesthetics. This scene serves as the technical backbone of the game's visual style.</p>
-    <p><strong>Tools:</strong> Inventor, MS Publisher, Photoshop</p>
 
-    <div id="contentPlaceholder" style="width: 100%; height: 300px; background-color: #0D5C75; color: white; display: flex; justify-content: center; align-items: center;">
-        <p>Text</p>
+    <div class="content-container">
+        <!-- Text content -->
+        <div class="text-box" id="contentPlaceholder">
+            <p>The project consists of two distinct sections: CVMG (Creative Visual Media Graphics) and Technical Graphics (TG).</p>
+            <p>CVMG focuses on digital graphic design elements, including user interfaces, posters, and other forms of visual communication. This section of the project will feature advertisements for the game, as well as the game's user interface, all aligned with a cohesive visual identity inspired by low-poly style games.</p>
+            <p>TG (Technical Graphics) emphasizes the creation of 3D models and technical sketches. The centerpiece of this section is a 3D scene representing the game's main menu, designed with low-poly aesthetics. This scene serves as the technical backbone of the game's visual style.</p>
+            <p><strong>Tools:</strong> Inventor, MS Publisher, Photoshop</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="button" onclick="showOverview()">Overview of the Project</button>
+            <button class="button" onclick="showPDF()">Documentation of the Project</button>
+            <button class="button" onclick="showModel()">View Model</button>
+        </div>
     </div>
 
+    <!-- Hidden sections -->
     <div id="pdfViewer" style="width: 100%; height: 600px;">
         <iframe src="assemble ship.pdf" width="100%" height="100%"></iframe>
     </div>
@@ -64,29 +106,27 @@
             src="https://sketchfab.com/models/366f971ce5964df8a8a02c3d0d270ab3/embed">
         </iframe>
     </div>
-
-    <div style="margin-top: 20px; text-align: center;">
-        <button class="button" onclick="showPDF()">Documentation of the project</button>
-        <button class="button" onclick="showModel()">View Model</button>
-    </div>
 </section>
 
 <script>
-    // Function to display the PDF document
-    function showPDF() {
-        document.getElementById("pdfViewer").style.display = "block";
+    function showOverview() {
+        document.getElementById("contentPlaceholder").style.display = "block";
+        document.getElementById("pdfViewer").style.display = "none";
         document.getElementById("modelViewer").style.display = "none";
-        document.getElementById("contentPlaceholder").style.display = "none";
     }
 
-    // Function to display the 3D model
-    function showModel() {
-        document.getElementById("modelViewer").style.display = "block";
-        document.getElementById("pdfViewer").style.display = "none";
+    function showPDF() {
         document.getElementById("contentPlaceholder").style.display = "none";
+        document.getElementById("pdfViewer").style.display = "block";
+        document.getElementById("modelViewer").style.display = "none";
+    }
+
+    function showModel() {
+        document.getElementById("contentPlaceholder").style.display = "none";
+        document.getElementById("pdfViewer").style.display = "none";
+        document.getElementById("modelViewer").style.display = "block";
     }
 </script>
 
 </body>
 </html>
-
