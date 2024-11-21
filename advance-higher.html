@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advance Higher Project</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hide content by default */
+        #pdfViewer, #modelViewer {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
-	
 <header>
     <h1>Advance Higher Graphic Project</h1>
 </header>
@@ -33,24 +36,23 @@
     </ul>
 </nav>
 
-
 <section>
     <h2>SQA Advance Higher Graphic Communication Project</h2>
     <h3 style="text-align: center;">Project Status : In Progress</h3>
     <p>The project consists of two distinct sections: CVMG (Creative Visual Media Graphics) and Technical Graphics (TG).</p>
-		<p>CVMG focuses on digital graphic design elements, including user interfaces, posters, and other forms of visual communication. This section of the project will feature advertisements for the game, as well as the game's user interface, all aligned with a cohesive visual identity inspired by low-poly style games.</p>
-		<p>TG (Technical Graphics) emphasizes the creation of 3D models and technical sketches. The centerpiece of this section is a 3D scene representing the game's main menu, designed with low-poly aesthetics. This scene serves as the technical backbone of the game's visual style.</p>
-    <p>Together, these two sections provide a comprehensive view of both the artistic and technical aspects of the project, showcasing how design and 3D modeling come together to build an engaging and visually appealing game environment.</p>
-		<p><strong>Tools:</strong> Inventor,MS Publisher, Photoshop</p>
-	
-	<div style="width: 100%; height: 600px;">
-    <iframe src="assemble ship.pdf" width="100%" height="100%"></iframe>
-	</div>
-	
-	
-	
-<section>
-    <div style="margin-top: 20px; text-align: center;">
+    <p>CVMG focuses on digital graphic design elements, including user interfaces, posters, and other forms of visual communication. This section of the project will feature advertisements for the game, as well as the game's user interface, all aligned with a cohesive visual identity inspired by low-poly style games.</p>
+    <p>TG (Technical Graphics) emphasizes the creation of 3D models and technical sketches. The centerpiece of this section is a 3D scene representing the game's main menu, designed with low-poly aesthetics. This scene serves as the technical backbone of the game's visual style.</p>
+    <p><strong>Tools:</strong> Inventor, MS Publisher, Photoshop</p>
+
+    <div id="contentPlaceholder" style="width: 100%; height: 300px; background-color: #0D5C75; color: white; display: flex; justify-content: center; align-items: center;">
+        <p>Text</p>
+    </div>
+
+    <div id="pdfViewer" style="width: 100%; height: 600px;">
+        <iframe src="assemble ship.pdf" width="100%" height="100%"></iframe>
+    </div>
+
+    <div id="modelViewer" style="text-align: center;">
         <iframe 
             title="3D Model Viewer"
             frameborder="0"
@@ -58,18 +60,33 @@
             mozallowfullscreen="true"
             webkitallowfullscreen="true"
             allow="autoplay; fullscreen; xr-spatial-tracking"
-            xr-spatial-tracking
-            execution-while-out-of-viewport
-            execution-while-not-rendered
-            web-share
             style="width: 80%; height: 500px;"
             src="https://sketchfab.com/models/366f971ce5964df8a8a02c3d0d270ab3/embed">
         </iframe>
     </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+        <button class="button" onclick="showPDF()">Documentation of the project</button>
+        <button class="button" onclick="showModel()">View Model</button>
+    </div>
 </section>
 
+<script>
+    // Function to display the PDF document
+    function showPDF() {
+        document.getElementById("pdfViewer").style.display = "block";
+        document.getElementById("modelViewer").style.display = "none";
+        document.getElementById("contentPlaceholder").style.display = "none";
+    }
 
-
+    // Function to display the 3D model
+    function showModel() {
+        document.getElementById("modelViewer").style.display = "block";
+        document.getElementById("pdfViewer").style.display = "none";
+        document.getElementById("contentPlaceholder").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
+
