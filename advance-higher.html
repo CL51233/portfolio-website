@@ -27,7 +27,7 @@
 
         .text-box, .model-viewer {
             flex: 1; /* Half width each */
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -36,13 +36,18 @@
         }
 
         /* PDF viewer styling */
-        .pdf-viewer {
+        .pdf-container {
             margin-top: 20px;
-            width: 100%;
-            height: 600px;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
         }
     </style>
 </head>
@@ -82,8 +87,11 @@
     </div>
 
     <!-- PDF Viewer Section -->
-    <div class="pdf-viewer">
-        <iframe src="assemble ship.pdf" width="100%" height="100%"></iframe>
+    <div class="pdf-container">
+        <iframe 
+            class="pdf-viewer" 
+            src="assemble ship.pdf">
+        </iframe>
     </div>
 </section>
 
