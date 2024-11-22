@@ -9,7 +9,7 @@ body {
     background-size: cover; /* Ensure it covers the entire area */
 }
 header {
-    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent header */
+    background-color: #f4f4f4; /* Semi-transparent header */
     color: white;
     padding: 20px;
     text-align: center;
